@@ -42,24 +42,24 @@ def main():
         EA_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         EE_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         EA_dict = {'RAM Corrput':0, 'Flash Error':0, 'RAM Bad':0, 'ROM Bad':0,
-                          'Passcode Reset':0, 'System Program Error':0, 'Watchdog':0, 'Finish Backup Bad':0,
-                          'User Alarm 3':0, 'User Alarm 2':0, 'User Alarm 1':0, 'Power Fail Alarm':0,
-                          'Ticket Alarm':0, 'Communications':0, 'User Alarm 5':0, 'User Alarm 4':0,
-                          'Pulse Security':0, 'Add Clean Line':0, 'Overrun Alarm':0, 'Zero Flow Alarm':0,
-                          'Density Trans':0, 'Temp Probe':0, 'Back Pressure':0, 'Valve Fault':0,
-                          'High Density':0, 'High Temp':0, 'High Flow':0, 'Pressure Trans':0,
-                          'Low Density':0, 'Low Temp':0, 'Low Flow':0, 'High Pressure':0,
-                          'Mass Meter Tube':0, 'Mass Meter Overdrive':0, 'Mass Meter Comm Fail':0, 'Low Pressure':0,
-                          'Report Full Storage':0, 'Promass Alarm':0, 'Shared Printer':0, 'PTB Printer Failure':0,
-                          'Not Used':0, 'Divert Timeout Alarm':0, 'BS&W Probe Alarm':0, 'Network Printer Alarm':0}
-        EE_array_named = ['Program Mode', 'Released', 'Flowing', 'Authorized',
-                          'Transaction in Progress', 'Transaction Done', 'Batch Done', 'Keypad Data Pending',
-                          'Printing in Progress', 'Permissive Delay', 'New Card Data Available', 'Alarm',
-                          'Program Value Changed', 'Delayed Prompt in Effect', 'Display Message Time-Out', 'Power-Fail Occured',
-                          'Checking Entries', 'Input #1', 'Input #1', 'Input #1',
-                          'Pending Reports', 'Report Storage Full', 'Printer Standby', 'Preset in Progress',
-                          'Reserved', 'Reserved', 'BS&W Limit Exceeded', 'Diverting',
-                          'Reserved', 'Reserved', 'Reserved', 'Reserved']
+                   'Passcode Reset':0, 'System Program Error':0, 'Watchdog':0, 'Finish Backup Bad':0,
+                   'User Alarm 3':0, 'User Alarm 2':0, 'User Alarm 1':0, 'Power Fail Alarm':0,
+                   'Ticket Alarm':0, 'Communications':0, 'User Alarm 5':0, 'User Alarm 4':0,
+                   'Pulse Security':0, 'Add Clean Line':0, 'Overrun Alarm':0, 'Zero Flow Alarm':0,
+                   'Density Trans':0, 'Temp Probe':0, 'Back Pressure':0, 'Valve Fault':0,
+                   'High Density':0, 'High Temp':0, 'High Flow':0, 'Pressure Trans':0,
+                   'Low Density':0, 'Low Temp':0, 'Low Flow':0, 'High Pressure':0,
+                   'Mass Meter Tube':0, 'Mass Meter Overdrive':0, 'Mass Meter Comm Fail':0, 'Low Pressure':0,
+                   'Report Full Storage':0, 'Promass Alarm':0, 'Shared Printer':0, 'PTB Printer Failure':0,
+                   'Not Used':0, 'Divert Timeout Alarm':0, 'BS&W Probe Alarm':0, 'Network Printer Alarm':0}
+        EE_dict = {'Program Mode':0, 'Released':0, 'Flowing':0, 'Authorized':0,
+                   'Transaction in Progress':0, 'Transaction Done':0, 'Batch Done':0, 'Keypad Data Pending':0,
+                   'Printing in Progress':0, 'Permissive Delay':0, 'New Card Data Available':0, 'Alarm':0,
+                   'Program Value Changed':0, 'Delayed Prompt in Effect':0, 'Display Message Time-Out':0, 'Power-Fail Occured':0,
+                   'Checking Entries':0, 'Input #1':0, 'Input #1':0, 'Input #1':0,
+                   'Pending Reports':0, 'Report Storage Full':0, 'Printer Standby':0, 'Preset in Progress':0,
+                   'Reserved':0, 'Reserved':0, 'BS&W Limit Exceeded':0, 'Diverting':0,
+                   'Reserved':0, 'Reserved':0, 'Reserved':0, 'Reserved':0}
         while True:
             # ENQUIRE ALARMS
             send_ascii_packet(ip_address, port, EA_packet)
