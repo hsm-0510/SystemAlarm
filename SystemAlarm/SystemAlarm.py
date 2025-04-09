@@ -36,7 +36,7 @@ def send_ascii_packet(ip, port, packet):
 
 def main():
     #Assign IP & Port of Batch Controller
-    ip_address = "192.168.10.130"
+    ip_address = "192.168.10.131"
     port = 7734
     try:
         EA_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
