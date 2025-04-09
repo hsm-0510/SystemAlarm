@@ -34,6 +34,102 @@ def send_ascii_packet(ip, port, packet):
         sock.close()
         #print("Connection closed")
 
+def decoder(dict, array):
+    if i == '1':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+    elif i == '2':
+        array = list(dict.keys())
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+    elif i == '3':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+    elif i == '4':
+        array = list(dict.keys())
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+    elif i == '5':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+    elif i == '6':
+        array = list(dict.keys())
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+    elif i == '7':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+    elif i == '8':
+        array = list(dict.keys())
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == '9':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == ':':
+        array = list(dict.keys())
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == ';':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == '<':
+        array = list(dict.keys())
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == '=':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == '>':
+        array = list(dict.keys())
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+    elif i == '?':
+        array = list(dict.keys())
+        key_change = array[3 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[2 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[1 + (j*4)]
+        dict[key_change] = 1
+        key_change = array[0 + (j*4)]
+        dict[key_change] = 1
+
 def main():
     #Assign IP & Port of Batch Controller
     ip_address = "192.168.10.131"
@@ -64,100 +160,7 @@ def main():
             j = 0
             print(responseA)
             for i in responseA[3:16]:
-                if i == '1':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '2':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '3':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '4':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '5':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '6':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '7':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '8':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '9':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == ':':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == ';':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '<':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '=':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '>':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
-                elif i == '?':
-                    EA_array = list(EA_dict.keys())
-                    key_change = EA_array[3 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[2 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[1 + (j*4)]
-                    EA_dict[key_change] = 1
-                    key_change = EA_array[0 + (j*4)]
-                    EA_dict[key_change] = 1
+                decoder(EA_dict, EA_array)
                 j += 1
             time.sleep(1)
             j = 0
@@ -170,53 +173,7 @@ def main():
             j = 0
             print(responseA)
             for i in responseA[3:11]:
-                if i == '1':
-                    EE_array[3 + (j*4)] = 1
-                elif i == '2':
-                    EE_array[2 + (j*4)] = 1
-                elif i == '3':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[2 + (j*4)] = 1
-                elif i == '4':
-                    EE_array[1 + (j*4)] = 1
-                elif i == '5':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                elif i == '6':
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                elif i == '7':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                elif i == '8':
-                    EE_array[0 + (j*4)] = 1
-                elif i == '9':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == ':':
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == ';':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == '<':
-                    EE_array[1 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == '=':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == '>':
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1
-                elif i == '?':
-                    EE_array[3 + (j*4)] = 1
-                    EE_array[2 + (j*4)] = 1
-                    EE_array[1 + (j*4)] = 1
-                    EE_array[0 + (j*4)] = 1   
+                decoder(EE_dict, EE_array)   
                 j += 1
             time.sleep(1)
             j = 0
