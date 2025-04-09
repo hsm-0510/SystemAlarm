@@ -123,23 +123,41 @@ def main():
                     key_change = EA_array[3 + (j*4)]
                     EA_dict[key_change] = 1
                     key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
                     key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '<':
-                    EA_array[1 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '=':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '>':
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '?':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1   
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 j += 1
             time.sleep(1)
             j = 0
