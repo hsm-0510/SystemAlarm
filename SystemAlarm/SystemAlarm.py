@@ -158,10 +158,6 @@ def main():
                    'Reserved':0, 'Reserved':0, 'BS&W Limit Exceeded':0, 'Diverting':0,
                    'Reserved':0, 'Reserved':0, 'Reserved':0, 'Reserved':0}
         while True:
-            # for a,b in EA_dict.items():
-            #     print(f"{a}:{b}")
-            # for a,b in EE_dict:
-            #     print(f"{a}:{b}")
             # ENQUIRE ALARMS
             send_ascii_packet(ip_address, port, EA_packet)
             j = 0
