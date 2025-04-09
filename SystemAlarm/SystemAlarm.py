@@ -132,9 +132,12 @@ def decoder(dict, array, i, j):
 
 def main():
     #Assign IP & Port of Batch Controller
-    ip_address = "192.168.10.131"
+    ip_address = "192.168.10.130"
     port = 7734
     try:
+        
+        EA_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        EE_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         EA_dict = {'RAM Corrput':0, 'Flash Error':0, 'RAM Bad':0, 'ROM Bad':0,
                    'Passcode Reset':0, 'System Program Error':0, 'Watchdog':0, 'Finish Backup Bad':0,
                    'User Alarm 3':0, 'User Alarm 2':0, 'User Alarm 1':0, 'Power Fail Alarm':0,
@@ -155,6 +158,10 @@ def main():
                    'Reserved':0, 'Reserved':0, 'BS&W Limit Exceeded':0, 'Diverting':0,
                    'Reserved':0, 'Reserved':0, 'Reserved':0, 'Reserved':0}
         while True:
+            # for a,b in EA_dict.items():
+            #     print(f"{a}:{b}")
+            # for a,b in EE_dict:
+            #     print(f"{a}:{b}")
             # ENQUIRE ALARMS
             send_ascii_packet(ip_address, port, EA_packet)
             j = 0
@@ -164,10 +171,8 @@ def main():
                 j += 1
             time.sleep(1)
             j = 0
-            for i in EA_array:
-                print(f"{EA_array_named[j]} : {i}")
-                j += 1
-            
+            for a, b in EA_dict.items():
+                print(f"{a}:{b}")
             # EXTENDED STATUS
             send_ascii_packet(ip_address, port, EE_packet)
             j = 0
@@ -177,9 +182,8 @@ def main():
                 j += 1
             time.sleep(1)
             j = 0
-            for i in EE_array:
-                print(f"{EE_array_named[j]} : {i}")
-                j += 1
+            for a, b in EE_dict.items():
+                print(f"{a}:{b}")
     except KeyboardInterrupt:
         print("Stopped")
 
