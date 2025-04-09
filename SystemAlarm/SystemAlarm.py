@@ -34,7 +34,7 @@ def send_ascii_packet(ip, port, packet):
         sock.close()
         #print("Connection closed")
 
-def decoder(dict, array):
+def decoder(dict, array, i, j):
     if i == '1':
         array = list(dict.keys())
         key_change = array[3 + (j*4)]
@@ -160,7 +160,7 @@ def main():
             j = 0
             print(responseA)
             for i in responseA[3:16]:
-                decoder(EA_dict, EA_array)
+                decoder(EA_dict, EA_array, i, j)
                 j += 1
             time.sleep(1)
             j = 0
@@ -173,7 +173,7 @@ def main():
             j = 0
             print(responseA)
             for i in responseA[3:11]:
-                decoder(EE_dict, EE_array)   
+                decoder(EE_dict, EE_array, i, j)   
                 j += 1
             time.sleep(1)
             j = 0
