@@ -39,8 +39,6 @@ def main():
     ip_address = "192.168.10.131"
     port = 7734
     try:
-        EA_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        EE_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         EA_dict = {'RAM Corrput':0, 'Flash Error':0, 'RAM Bad':0, 'ROM Bad':0,
                    'Passcode Reset':0, 'System Program Error':0, 'Watchdog':0, 'Finish Backup Bad':0,
                    'User Alarm 3':0, 'User Alarm 2':0, 'User Alarm 1':0, 'Power Fail Alarm':0,
@@ -67,36 +65,65 @@ def main():
             print(responseA)
             for i in responseA[3:16]:
                 if i == '1':
-                    EA_array[3 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '2':
-                    EA_array[2 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '3':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[2 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '4':
-                    EA_array[1 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '5':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '6':
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '7':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[1 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[1 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '8':
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == '9':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == ':':
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[2 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[0 + (j*4)]
+                    EA_dict[key_change] = 1
                 elif i == ';':
-                    EA_array[3 + (j*4)] = 1
-                    EA_array[2 + (j*4)] = 1
-                    EA_array[0 + (j*4)] = 1
+                    EA_array = list(EA_dict.keys())
+                    key_change = EA_array[3 + (j*4)]
+                    EA_dict[key_change] = 1
+                    key_change = EA_array[2 + (j*4)]
+                    key_change = EA_array[0 + (j*4)]
                 elif i == '<':
                     EA_array[1 + (j*4)] = 1
                     EA_array[0 + (j*4)] = 1
